@@ -1,0 +1,25 @@
+# Ignorar el entorno virtual local completo
+youreview/*
+
+# Ignorar archivos de caché y compilados de Python
+__pycache__/
+*.py[cod]
+
+# Ignorar caché de pytest
+.pytest_cache/
+
+# Ignorar archivos de control de versiones
+.git
+.gitignore
+
+# Ignorar carpetas de IDE y editor
+.vscode/
+.idea/
+*.swp
+
+# Ignorar otros archivos y carpetas innecesarios
+*.log
+.DS_Store
+node_modules/
+coverage/
+tests/

@@ -1,0 +1,28 @@
+2024-11-18 09:24:18 | ERROR | An error occurred while downloading the audio.: 'Logger' object has no attribute 'log_error'
+2024-11-18 09:24:18 | ERROR | Traceback (most recent call last):
+  File "C:\Users\ilmov\Desktop\Python\Youreview\Backend\app\services\video_service.py", line 82, in download_audio
+    return self._serve_file(file_path)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\ilmov\Desktop\Python\Youreview\Backend\app\services\video_service.py", line 165, in _serve_file
+    self.logger.log_error(f"File not found: {sanitized_path}")
+    ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Logger' object has no attribute 'log_error'
+
+2024-11-18 09:26:55 | ERROR | File not found.: File not found: C:\Users\ilmov\Desktop\Python\Youreview\Backend\app\temp_audios\Octoverse 2024： The rise of Python and AI.webm
+2024-11-18 09:26:55 | ERROR | Traceback (most recent call last):
+  File "C:\Users\ilmov\Desktop\Python\Youreview\Backend\app\services\video_service.py", line 82, in download_audio
+    return self._serve_file(file_path)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\ilmov\Desktop\Python\Youreview\Backend\app\services\video_service.py", line 166, in _serve_file
+    raise FileNotFoundError(f"File not found: {sanitized_path}")
+app.services.video_service.FileNotFoundError: File not found: C:\Users\ilmov\Desktop\Python\Youreview\Backend\app\temp_audios\Octoverse 2024： The rise of Python and AI.webm
+
+2024-11-19 06:15:55 | ERROR | The provided URL is invalid or empty.: The provided URL is invalid or empty.
+2024-11-19 06:15:55 | ERROR | Traceback (most recent call last):
+  File "C:\Users\ilmov\Desktop\Python\Youreview\Backend\app\services\video_service.py", line 54, in generate_video_summary
+    self._validate_url(video_url)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\ilmov\Desktop\Python\Youreview\Backend\app\services\video_service.py", line 100, in _validate_url
+    raise InvalidURLException("The provided URL is invalid or empty.")
+app.services.video_service.InvalidURLException: The provided URL is invalid or empty.
+
