@@ -1,28 +1,46 @@
-2024-11-18 09:24:18 | ERROR | An error occurred while downloading the audio.: 'Logger' object has no attribute 'log_error'
-2024-11-18 09:24:18 | ERROR | Traceback (most recent call last):
-  File "C:\Users\ilmov\Desktop\Python\Youreview\Backend\app\services\video_service.py", line 82, in download_audio
-    return self._serve_file(file_path)
-           ~~~~~~~~~~~~~~~~^^^^^^^^^^^
-  File "C:\Users\ilmov\Desktop\Python\Youreview\Backend\app\services\video_service.py", line 165, in _serve_file
-    self.logger.log_error(f"File not found: {sanitized_path}")
-    ^^^^^^^^^^^^^^^^^^^^^
-AttributeError: 'Logger' object has no attribute 'log_error'
+2024-11-26 11:58:22 | ERROR | An error occurred while downloading the audio.: VideoService._sanitize_file_name() takes 1 positional argument but 2 were given
+2024-11-26 11:58:22 | ERROR | Traceback (most recent call last):
+  File "C:\Users\ilmov\Desktop\Python\Youreview\backend\app\services\video_service.py", line 85, in download_audio
+    sanitized_name = self._sanitize_file_name(file_path)
+TypeError: VideoService._sanitize_file_name() takes 1 positional argument but 2 were given
 
-2024-11-18 09:26:55 | ERROR | File not found.: File not found: C:\Users\ilmov\Desktop\Python\Youreview\Backend\app\temp_audios\Octoverse 2024： The rise of Python and AI.webm
-2024-11-18 09:26:55 | ERROR | Traceback (most recent call last):
-  File "C:\Users\ilmov\Desktop\Python\Youreview\Backend\app\services\video_service.py", line 82, in download_audio
-    return self._serve_file(file_path)
-           ~~~~~~~~~~~~~~~~^^^^^^^^^^^
-  File "C:\Users\ilmov\Desktop\Python\Youreview\Backend\app\services\video_service.py", line 166, in _serve_file
-    raise FileNotFoundError(f"File not found: {sanitized_path}")
-app.services.video_service.FileNotFoundError: File not found: C:\Users\ilmov\Desktop\Python\Youreview\Backend\app\temp_audios\Octoverse 2024： The rise of Python and AI.webm
+2024-11-26 12:44:02 | ERROR | An error occurred while downloading the audio.: VideoService._sanitize_file_name() takes 1 positional argument but 2 were given
+2024-11-26 12:44:02 | ERROR | Traceback (most recent call last):
+  File "C:\Users\ilmov\Desktop\Python\Youreview\backend\app\services\video_service.py", line 85, in download_audio
+    sanitized_name = self._sanitize_file_name(file_path)
+TypeError: VideoService._sanitize_file_name() takes 1 positional argument but 2 were given
 
-2024-11-19 06:15:55 | ERROR | The provided URL is invalid or empty.: The provided URL is invalid or empty.
-2024-11-19 06:15:55 | ERROR | Traceback (most recent call last):
-  File "C:\Users\ilmov\Desktop\Python\Youreview\Backend\app\services\video_service.py", line 54, in generate_video_summary
-    self._validate_url(video_url)
-    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
-  File "C:\Users\ilmov\Desktop\Python\Youreview\Backend\app\services\video_service.py", line 100, in _validate_url
-    raise InvalidURLException("The provided URL is invalid or empty.")
-app.services.video_service.InvalidURLException: The provided URL is invalid or empty.
+2024-11-26 12:46:32 | ERROR | An error occurred while downloading the audio.: 'builtin_function_or_method' object is not subscriptable
+2024-11-26 12:46:32 | ERROR | Traceback (most recent call last):
+  File "C:\Users\ilmov\Desktop\Python\Youreview\backend\app\services\video_service.py", line 85, in download_audio
+    print(file_path.replace[0](" ", "_"))
+          ~~~~~~~~~~~~~~~~~^^^
+TypeError: 'builtin_function_or_method' object is not subscriptable
+
+2024-11-26 12:51:42 | ERROR | An error occurred while downloading the audio.: 'str' object has no attribute 'trim'
+2024-11-26 12:51:42 | ERROR | Traceback (most recent call last):
+  File "C:\Users\ilmov\Desktop\Python\Youreview\backend\app\services\video_service.py", line 85, in download_audio
+    base_name = os.path.splitext(os.path.basename(file_path))[0].trim()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'trim'
+
+2024-11-26 12:57:56 | ERROR | An error occurred while downloading the audio.: VideoService._serve_file() takes 2 positional arguments but 3 were given
+2024-11-26 12:57:56 | ERROR | Traceback (most recent call last):
+  File "C:\Users\ilmov\Desktop\Python\Youreview\backend\app\services\video_service.py", line 87, in download_audio
+    return self._serve_file(file_path, name_audio)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: VideoService._serve_file() takes 2 positional arguments but 3 were given
+
+2024-11-26 13:44:50 | ERROR | Video duration 716 seconds exceeds the allowed limit of 600 seconds.: Video duration 716 seconds exceeds the allowed limit of 600 seconds.
+2024-11-26 13:44:50 | ERROR | Traceback (most recent call last):
+  File "C:\Users\ilmov\Desktop\Python\Youreview\backend\app\services\video_service.py", line 55, in generate_video_summary
+    video_info = self._fetch_video_info(video_url)
+  File "C:\Users\ilmov\Desktop\Python\Youreview\backend\app\services\video_service.py", line 107, in _fetch_video_info
+    self._validate_video_duration(info)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\ilmov\Desktop\Python\Youreview\backend\app\services\video_service.py", line 137, in _validate_video_duration
+    raise FetchVideoInfoException(
+        f"Video duration {duration} seconds exceeds the allowed limit of {self.max_video_duration} seconds."
+    )
+app.services.video_service.FetchVideoInfoException: Video duration 716 seconds exceeds the allowed limit of 600 seconds.
 
